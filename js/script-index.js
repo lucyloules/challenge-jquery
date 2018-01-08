@@ -14,6 +14,17 @@ printNews();*/
 	$(function printsNews(){
 		$('.newNotice').text("Nuevas recetas");
 	});
+
+
+
+
+
+
+
+
+
+
+
 });
 
 
@@ -22,8 +33,15 @@ printNews();*/
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
-}
+
+		for(var i =0; i < recipesArray.length; i++){//busco en el array los elementos con highlighted en true
+			if(recipesArray[i].highlighted === true){
+				var rPhotos = recipesArray[i]; // en variable photos guardo los elementos de recipesArray que son true
+				renderRecipe(rPhotos); // envio el array rPhotos a la funcion renderRecipe
+				console.log('Recipes: ', recipesArray[i]); // muestra enconsola las 6 recetas con true
+			}
+		}
+	}
 
 /*
 * Función que se encarga de pintar UNA recetas que tenga 
@@ -32,6 +50,8 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
+
+	
 	console.log('Voy a pintar la receta: ', recipe);
 }
 
