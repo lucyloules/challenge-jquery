@@ -3,6 +3,17 @@ $(document).ready( function(){
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
+	/*Función que se encarga de mostrar asignar al parafo
+con id pNews el texto "Nuevas recetas" */
+
+/*function printNews(){ --> otra forma
+	$('.newNotice').text("Nuevas recetas");
+}
+
+printNews();*/
+	$(function printsNews(){
+		$('.newNotice').text("Nuevas recetas");
+	});
 });
 
 
@@ -41,5 +52,7 @@ function renderActivities(activitiesArray) {
 function renderActivity(recipe) {
 	
 }
-
+/*Se oculta la flecha cuando se muestra index.html */
 $('.js-back').hide();
+
+
