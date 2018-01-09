@@ -50,19 +50,19 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	   $(".list-recipes").append("<span class='title-recipe'>" + recipe.title + "</span>" +
+/*	   $(".list-recipes").append("<span class='title-recipe'>" + recipe.title + "</span>" +
           "<span class='author-recipe'>" + recipe.source.name + "</span><img class='picture-img' src='img/recipes/640x480/" +
-           recipe.name + ".jpg'>");
+           recipe.name + ".jpg'>"); */ 
    
 
-/*	$('.list-recipes').append(
+	$('.list-recipes').append(
 		'<span class="title-recipe"><a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">'
 		+ recipe.title + 
 		'</span><span class="metadata-recipe"><span class="author-recipe"> '
 		+ recipe.source.name 
 		+ ' </span><span class="bookmarks-recipe"><span class="icon-bookmark"></span></span></span></span><img src="img/recipes/640x800/'
 		+ recipe.name 
-		+'.jpg"/></a></span>');*/
+		+'.jpg"/></a></span>');
 
 	console.log('Voy a pintar la receta: ', recipe);
 }
@@ -73,13 +73,7 @@ function renderRecipe(recipe) {
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
-	for(var i =0; i < activitiesArray.length; i++){//busco en el array los elementos con highlighted en true
-			if(activitiesArray[i]){
-				var activity = activitiesArray[i]; // en variable photos guardo los elementos de recipesArray que son true
-				renderRecipe(activity); // envio el array rPhotos a la funcion renderRecipe
-				console.log('Recipes: ', recipesArray[i]); // muestra enconsola las 6 recetas con true
-			}
-		}
+
 	console.log('Activities: ', activitiesArray);
 }
 
