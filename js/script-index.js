@@ -73,50 +73,25 @@ function renderRecipe(recipe) {
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
-/*	for(var i =0; i < activitiesArray.length; i++){//busco en el array los elementos con highlighted en true
-      if(activitiesArray[i]){
-        var activity = activitiesArray[i]; // en variable photos guardo los elementos de recipesArray que son true
-        renderRecipe(activity); // envio el array rPhotos a la funcion renderRecipe
-        console.log('Recipes: ', recipesArray[i]); // muestra enconsola las 6 recetas con true
-      }
+  console.log('Activities: ', activitiesArray);
+  for (var i = 0; i < activitiesArray.length; i++) {
+    renderActivity(activitiesArray[i]);
+  }
+    if(activitiesArray.length > 0) {
+      $('.wrapper-message').hide();
+      console.log(hola)
     }
-*/
-	console.log('Activities: ', activitiesArray);
 }
+
 
 /*
 * Función que se encarga de pintar una actividad
-* Aqui se tiene que crear el HTML que esta en el 
+* Aqui se tiene que crear el HTML que esta en el
 * archivo "templates/templates-activity.html"
 */
-
-/*var recipe = activitiesArray;*/
 function renderActivity(recipe) {
-
-  $('.wrapper-message').hide();
-  for(var i = 0 ; i < activitiesArray.length ; i++){
-  /*  var userAvatar = activitiesArray[i].userAvatar;  
-    var userName = activitiesArray[i].userName;
-    var recipeName = activitiesArray[i].recipeName;
-    var text = activitiesArray[i].text;
-    var place = activitiesArray[i].place;
-    var img = activitiesArray[i].image;*/
-      $('.list-activities').append(
-      '<a href="#" class="item-activity"> ' +  
-      '<span class="attribution">' +
-      '<span class="avatar">' + 
-      '<img src="' + activities.userAvatar + '" class="image-avatar">' +
-      '</span>' + 
-      '<span class="meta">' +
-      '<span class="author">' + activities.userName + '</span> made ' + 
-      '<span class="recipe">' + activities.recipeName + '</span>: ' + activities.text + 
-      '<span class="location">&mdash;'+ activities.place + '</span></span></span>' +     
-      '<div class="bg-image" style="background-image: url(' + activities.img + ')"></div>' +
-      '</a>'
-    )
-  }
+    $(".list-activities").append('<a href="#" class="item-activity"><span class="attribution"> <span class="avatar"><img src="' + recipe.userAvatar + '" class="image-avatar"></span> <span class="meta"><span class="author">' + recipe.userName + '</span> made <span class="recipe">' + recipe.recipeName + '</span>:' + recipe.text + '<span class="location"> &mdash;' +  recipe.place + '</span> </span> </span> <div class="bg-image" style="background-image: url(' + recipe.image + ');"></div></a>');
 }
-
 
 /*Se oculta la flecha cuando se muestra index.html */
 $('.js-back').hide();
